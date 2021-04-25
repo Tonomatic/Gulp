@@ -4,16 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "heroku-postbuild": "npm run build --prefix frontend",
+    "install": "npm --prefix backend install backend && npm --prefix frontend install frontend",
+    "dev:backend": "npm install --prefix backend start",
+    "dev:frontend": "npm install --prefix frontend start",
+    "sequelize": "npm run --prefix backend sequelize",
+    "sequelize-cli": "npm run --prefix backend sequelize-cli",
+    "start": "npm start --prefix backend"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tonomatic/Gulp.git"
+    "url": "git+https://github.com/mkellydevv/Project-2.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tonomatic/Gulp/issues"
+    "url": "https://github.com/mkellydevv/Project-2/issues"
   },
-  "homepage": "https://github.com/Tonomatic/Gulp#readme"
+  "homepage": "https://github.com/mkellydevv/Project-2#readme",
+  "dependencies": {}
 }
