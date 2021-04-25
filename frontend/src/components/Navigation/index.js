@@ -26,6 +26,7 @@ function Navigation({ isLoaded }) {
             <li>
                 <NavLink exact to="/">Home</NavLink>
                 {isLoaded && sessionLinks}
+                {/* <p>THIS IS A TEST</p> */}
             </li>
         </ul>
     );
