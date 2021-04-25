@@ -16,10 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/Tonomatic/Gulp.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Tonomatic/Gulp/issues"
   },
-  "homepage": "https://github.com/Tonomatic/Gulp#readme"
+  "homepage": "https://github.com/Tonomatic/Gulp#readme",
+  "dependencies": {}
 }
