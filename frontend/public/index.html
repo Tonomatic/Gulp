@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+  <style>
+
+    #map {
+      height: 800px;
+      width: 50%;
+    }
+    #align {
+      display: flex;
+      justify-content: flex-end;
+    }
+  </style>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
   <meta charset="utf-8" />
@@ -12,7 +23,30 @@
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="align">
+
+    <div id="map"></div>
+    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+    <script>
+      function initMap() {
+        let location = { lat: 36.85, lng: -75.97 };
+        // let location = { lat: -25.363, lng: 131.044 };
+        let map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 9,
+          center: location
+        });
+        let marker = new google.maps.Marker({
+          position: location,
+          map: map
+        })
+      }
+    // AIzaSyABdRIkqcDyFxSoksmn6XCkrU6Z5N2iZao
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABdRIkqcDyFxSoksmn6XCkrU6Z5N2iZao&callback=initMap">
+
+      </script>
+  </div>
   <div id="root"></div>
 </body>
 
