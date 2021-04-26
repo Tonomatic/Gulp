@@ -2,17 +2,38 @@
 <html lang="en">
 
 <head>
-  <!-- <style>
+  <style>
+    body {
+      font-family: "Arial Narrow";
+    }
 
-    #map {
-      height: 800px;
-      width: 50%;
+    #navigationBar {
+      background: white;
+      box-shadow: 0px 1px 5px 5px #ddd;
+      height: auto;
+      text-align: center;
+      width: 100%;
     }
-    #align {
-      display: flex;
-      justify-content: flex-end;
+
+    #navigationBar>ul>li {
+      display: inline;
     }
-  </style> -->
+
+    li>a {
+      color: red;
+      display: inline-block;
+      margin: 0px;
+      padding: 0px 15px;
+      text-decoration: none;
+      transition: color 0.3s ease-in;
+      height: 60px;
+      line-height: 60px;
+    }
+
+    #navigationBar>ul>li>a:hover {
+      color: purple;
+    }
+  </style>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
   <meta charset="utf-8" />
@@ -23,6 +44,25 @@
 </head>
 
 <body>
+  <nav id="navigationBar">
+    <ul>
+      <li>
+        <a href="javascript:void(0)" class="link">Home</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" class="link">About</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" class="link">Contact</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" class="link">News</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" class="link">Photos</a>
+      </li>
+    </ul>
+  </nav>
   <!-- <div id="align">
 
     <div id="map"></div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 
@@ -29,7 +30,8 @@ function ProfileButton({ user }) {
     };
 
     return (
-        <>
+        <div>
+            <NavLink activeClassName="selected" to="/browser">Map</NavLink>
             <button onClick={openMenu}>
                 <i className="fas fa-user-astronaut"></i>
             </button>
@@ -43,7 +45,7 @@ function ProfileButton({ user }) {
                     </li>
                 </ul>
             )}
-        </>
+        </div>
     );
 }
 
