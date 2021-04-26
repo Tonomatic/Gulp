@@ -23,10 +23,21 @@ function Navigation({ isLoaded }) {
 
     return (
         <ul>
-            <li>
-                <NavLink exact to="/">Home</NavLink>
-                {isLoaded && sessionLinks}
-            </li>
+
+            <nav id="navigationBar">
+                <ul>
+
+                    <li>
+                        <NavLink exact to="/" activeClassName="thisboi">Home</NavLink>
+                        {isLoaded && sessionLinks}
+
+                    </li>
+                    <li>
+                        <a href=" " class="link">Contact</a>
+                    </li>
+
+                </ul>
+            </nav>
         </ul>
     );
 }
