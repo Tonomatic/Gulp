@@ -9,30 +9,38 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       reviewText: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(100)
       },
       reviewPhotos: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       rating: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       reviewMark: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       userId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       restaurantId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       }
     });
   },
