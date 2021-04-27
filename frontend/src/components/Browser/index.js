@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './Browser.css';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import CurrentLocation from './UsersLocation';
 
 const mapStyles = {
     width: '100%',
@@ -35,21 +36,11 @@ export class MapContainer extends Component {
 
     render() {
         return (
-            <Map
+            <CurrentLocation
+                centerAroundCurrentLocation
                 google={this.props.google}
-                zoom={14}
-                style={mapStyles}
-                initialCenter={
-                    {
-                        lat: 36.85,
-                        lng: -75.97
-                    }
-                }
             >
-                <Marker
-                    onClick={this.onMarkerClick}
-                    name={'Kenyatta International Convention Centre'}
-                />
+                <Marker onClick={this.onMarkerClick} name={'Current Location'} />
                 <InfoWindow
                     marker={this.state.activeMarker}
                     visible={this.state.showingInfoWindow}
@@ -59,7 +50,7 @@ export class MapContainer extends Component {
                         <h4>{this.state.selectedPlace.name}</h4>
                     </div>
                 </InfoWindow>
-            </Map>
+            </CurrentLocation>
         );
     }
 }
