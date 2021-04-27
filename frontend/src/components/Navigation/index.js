@@ -33,7 +33,10 @@ function Navigation({ isLoaded }) {
 
                     </li>
                     <li>
-                        <a href=" " class="link">Contact</a>
+                        <NavLink to="/browser">Map</NavLink>
+                    </li>
+                    <li>
+                        <a href=" " className="link">Contact</a>
                     </li>
 
                 </ul>
