@@ -3,7 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import { getRestaurants } from '../../store/session'
+import { getRestaurants } from '../../store/restaurant'
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);

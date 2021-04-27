@@ -1,6 +1,4 @@
-
 import { csrfFetch } from './csrf';
-
 
 const LOAD = "restaurants/load";
 const load = (list) => ({
@@ -20,8 +18,7 @@ export const getRestaurants = () => async (dispatch) => {
 
 const initialState = { user: null };
 
-const sessionReducer = (state = initialState, action) => {
-    let newState;
+const restaurantReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD:
             const allRes = {};
@@ -34,4 +31,4 @@ const sessionReducer = (state = initialState, action) => {
     }
 };
 
-export default sessionReducer;
+export default restaurantReducer;
