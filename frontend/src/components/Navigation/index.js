@@ -22,8 +22,7 @@ function Navigation({ isLoaded }) {
     }
 
     return (
-        <ul>
-
+        <ul className="wack">
             <nav id="navigationBar">
                 <ul>
 
@@ -41,6 +40,9 @@ function Navigation({ isLoaded }) {
 
                 </ul>
             </nav>
+            <div className="HomePage">
+                Welcome to iGulp
+            </div>
         </ul>
     );
 }
