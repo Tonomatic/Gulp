@@ -47,6 +47,11 @@ module.exports = (sequelize, DataTypes) => {
       },
     });
 
+
+  User.associate = function (models) {
+    User.hasMany(models.Review, { foreignKey: 'userId' })
+  };
+
   User.prototype.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.hashedPassword.toString());
   };
@@ -83,10 +88,6 @@ module.exports = (sequelize, DataTypes) => {
 
   User.getCurrentUserById = async function (id) {
     return await User.scope('currentUser').findByPk(id);
-  };
-
-  User.associate = function (models) {
-    User.hasMany(models.Review, {foreignKey: 'userId'})
   };
 
   return User;

@@ -2,8 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Review = sequelize.define('Review', {
     reviewText: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.TEXT,
     },
     reviewPhotos: {
       type: DataTypes.TEXT,
@@ -12,11 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     rating: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    reviewMark: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+    }
   }, {});
   Review.associate = function(models) {
     Review.belongsTo(models.User, {foreignKey: 'userId'})

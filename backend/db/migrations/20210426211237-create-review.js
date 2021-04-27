@@ -10,17 +10,13 @@ module.exports = {
       },
       reviewText: {
         allowNull: false,
-        type: Sequelize.STRING(100)
+        type: Sequelize.TEXT
       },
       reviewPhotos: {
         allowNull: false,
         type: Sequelize.TEXT
       },
       rating: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
-      reviewMark: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
