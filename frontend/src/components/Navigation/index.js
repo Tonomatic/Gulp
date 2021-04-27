@@ -7,17 +7,21 @@ import { getRestaurants } from '../../store/restaurant'
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(getRestaurants());
+    }, []);
 
-    const { restaurant } = useParams();
-    const resta = useSelector(state => {
-        return state
+    const { restaurantId } = useParams();
+    const restaurant = useSelector(state => {
+        // return state.map((id) => state[id])
+        return Object.values(state.restaurant);
     })
 
-    console.log(resta)
+    console.log(restaurant)
 
 
-    const dispatch = useDispatch();
 
     let sessionLinks;
     if (sessionUser) {
@@ -34,15 +38,11 @@ function Navigation({ isLoaded }) {
     }
     const [showForm, setShowForm] = useState(false);
 
-    useEffect(() => {
-        dispatch(getRestaurants());
 
-    }, []);
-
+    if (!restaurant) return null;
 
     return (
         <ul>
-
             <nav id="navigationBar">
                 <ul>
 
@@ -60,6 +60,15 @@ function Navigation({ isLoaded }) {
 
                 </ul>
             </nav>
+            {/* <nav>
+                {restaurant.map((restaurant1) => (
+                    <div key={restaurant1}>
+                        <div>
+                            {restaurant1}
+                        </div>
+                    </div>
+                ))}
+            </nav> */}
         </ul>
     );
 }
