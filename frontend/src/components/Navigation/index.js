@@ -1,11 +1,23 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { NavLink, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
+import { getRestaurants } from '../../store/session'
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
+
+
+    const { restaurant } = useParams();
+    const resta = useSelector(state => {
+        return state
+    })
+
+    console.log(resta)
+
+
+    const dispatch = useDispatch();
 
     let sessionLinks;
     if (sessionUser) {
@@ -20,6 +32,13 @@ function Navigation({ isLoaded }) {
             </>
         );
     }
+    const [showForm, setShowForm] = useState(false);
+
+    useEffect(() => {
+        dispatch(getRestaurants());
+
+    }, []);
+
 
     return (
         <ul>

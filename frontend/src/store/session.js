@@ -2,7 +2,7 @@ import { csrfFetch } from './csrf';
 
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
-
+const LOAD = "restaurants/load";
 const setUser = (user) => {
     return {
         type: SET_USER,
@@ -15,6 +15,12 @@ const removeUser = () => {
         type: REMOVE_USER,
     };
 };
+
+const load = (list) => ({
+    type: LOAD,
+    list,
+});
+
 
 export const restoreUser = () => async (dispatch) => {
     const response = await csrfFetch('/api/session');
@@ -60,6 +66,16 @@ export const login = (user) => async (dispatch) => {
     return response;
 };
 
+export const getRestaurants = () => async (dispatch) => {
+    const resta = await fetch('/api/restaurants');
+
+    if (resta.ok) {
+        const list = await resta.json();
+        dispatch(load(list));
+        // console.log(list)
+    }
+}
+
 const initialState = { user: null };
 
 const sessionReducer = (state = initialState, action) => {
@@ -73,6 +89,12 @@ const sessionReducer = (state = initialState, action) => {
             newState = Object.assign({}, state);
             newState.user = null;
             return newState;
+        case LOAD:
+            const allRes = {};
+            action.list.forEach((restaurant) => {
+                allRes[restaurant.id] = restaurant;
+            })
+            return allRes;
         default:
             return state;
     }
