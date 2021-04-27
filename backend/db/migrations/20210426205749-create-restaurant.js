@@ -19,7 +19,7 @@ module.exports = {
       },
       hours: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.TEXT
       },
       rating: {
         allowNull: false,
