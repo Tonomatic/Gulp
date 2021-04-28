@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import GoogleApiWrapper from './components/Browser'
 import Restaurants from './components/Restaurants'
 import Footer from './components/Footer'
+import Logo from './components/Logo'
 
 function App() {
   const dispatch = useDispatch();
@@ -16,26 +17,25 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  return (
+  return isLoaded && (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route path="/browser">
-            <GoogleApiWrapper />
-          </Route>
-          <Route path="/restaurants">
-            <Restaurants />
-          </Route>
-        </Switch>
+      <Logo />
+      <Switch>
+        <Navigation isLoaded={isLoaded} path="/" exact />
+        <Route path="/login">
+          <LoginFormPage />
+        </Route>
+        <Route path="/signup">
+          <SignupFormPage />
+        </Route>
+        <Route path="/browser">
+          <GoogleApiWrapper />
+        </Route>
+        <Route path="/restaurants">
+          <Restaurants />
+        </Route>
+      </Switch>
 
-      )}
       {/* <Footer /> */}
     </>
   );

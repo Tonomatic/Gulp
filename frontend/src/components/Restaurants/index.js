@@ -21,7 +21,7 @@ function Restaurants() {
 
     // if (!restaurant) return null;
     return (
-        <ul>
+        <nav>
 
 
             {restaurant.map((res) => (
@@ -45,7 +45,7 @@ function Restaurants() {
                 <Browser/>
             </div>
 
-        </ul >
+        </nav >
     );
 }
 

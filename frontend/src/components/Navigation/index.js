@@ -23,37 +23,40 @@ function Navigation({ isLoaded }) {
     }
 
     return (
-        <ul>
-            <nav id="navigationBar">
-                <ul>
+        <nav>
+            <div>
 
-                    <li>
-                        <NavLink exact to="/" activeClassName="homeNav">Home</NavLink>
-                        {isLoaded && sessionLinks}
+                <div
+                    className="homeImg"
 
-                    </li>
-                    <li>
-                        <NavLink to="/browser">Map</NavLink>
-                    </li>
-                    <li>
-                        <a href=" " className="link">Contact</a>
-                    </li>
-                    <li>
-                        <NavLink to="restaurants">Restaurants</NavLink>
-                    </li>
-
-                </ul>
-            </nav>
-            <div
-                className="homeImg"
-            >
+                >
+                </div>
                 <div className="text">
-                    <h1>iGulp</h1>
-                    <textarea>Find</textarea>
+                    <h1>igulp</h1>
+                    Find
+                <input />
                     <button>Find</button>
                 </div>
             </div>
-        </ul>
+            <ul className="navigationBar">
+                <li>
+                    <NavLink to="/" activeClassName="homeNav">Home</NavLink>
+                    {isLoaded && sessionLinks}
+
+                </li>
+                <li>
+                    <NavLink to="/browser">Map</NavLink>
+                </li>
+                <li>
+                    <a href=" " className="link">Contact</a>
+                </li>
+                <li>
+                    <NavLink to="restaurants">Restaurants</NavLink>
+                </li>
+
+            </ul>
+
+        </nav>
     );
 }
 
