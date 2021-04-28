@@ -6,6 +6,8 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import GoogleApiWrapper from './components/Browser'
+import Restaurants from './components/Restaurants'
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,6 +28,9 @@ function App() {
           </Route>
           <Route path="/browser">
             <GoogleApiWrapper />
+          </Route>
+          <Route path="/restaurant">
+            <Restaurants />
           </Route>
         </Switch>
       )}

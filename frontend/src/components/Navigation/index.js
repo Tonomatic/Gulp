@@ -1,27 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Image, AppRegistry } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import { getRestaurants } from '../../store/restaurant'
+import { useImage } from 'react-image'
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getRestaurants());
-    }, []);
-
-    const { restaurantId } = useParams();
-    const restaurant = useSelector(state => {
-        // return state.map((id) => state[id])
-        return Object.values(state.restaurant);
-    })
-
-    console.log(restaurant)
-
-
 
     let sessionLinks;
     if (sessionUser) {
@@ -36,10 +21,6 @@ function Navigation({ isLoaded }) {
             </>
         );
     }
-    const [showForm, setShowForm] = useState(false);
-
-
-    if (!restaurant) return null;
 
     return (
         <ul>
@@ -47,7 +28,7 @@ function Navigation({ isLoaded }) {
                 <ul>
 
                     <li>
-                        <NavLink exact to="/" activeClassName="thisboi">Home</NavLink>
+                        <NavLink exact to="/" activeClassName="homeNav">Home</NavLink>
                         {isLoaded && sessionLinks}
 
                     </li>
@@ -57,18 +38,12 @@ function Navigation({ isLoaded }) {
                     <li>
                         <a href=" " className="link">Contact</a>
                     </li>
+                    <li>
+                        <NavLink to="restaurants">Restaurants</NavLink>
+                    </li>
 
                 </ul>
             </nav>
-            {/* <nav>
-                {restaurant.map((restaurant1) => (
-                    <div key={restaurant1}>
-                        <div>
-                            {restaurant1}
-                        </div>
-                    </div>
-                ))}
-            </nav> */}
         </ul>
     );
 }

@@ -9,4 +9,5 @@ router.get('/', asyncHandler( async function(req, res ) {
     return res.json(restaurants)
 }));
 
+
 module.exports = router;

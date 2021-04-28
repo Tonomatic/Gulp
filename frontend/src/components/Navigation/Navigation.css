@@ -11,9 +11,6 @@
     display: inline;
   }
 
-  p {
-      background-color: green;
-  }
 
   li>a {
     color: red;

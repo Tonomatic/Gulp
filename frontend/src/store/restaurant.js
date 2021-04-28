@@ -16,7 +16,7 @@ export const getRestaurants = () => async (dispatch) => {
     }
 }
 
-const initialState = { user: null };
+const initialState = { restaurant:[] };
 
 const restaurantReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -25,7 +25,10 @@ const restaurantReducer = (state = initialState, action) => {
             action.list.forEach((restaurant) => {
                 allRes[restaurant.id] = restaurant;
             })
-            return allRes;
+            return {
+                ...allRes,
+                ...state
+            }
         default:
             return state;
     }
