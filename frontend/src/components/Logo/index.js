@@ -8,9 +8,9 @@ function Logo({ isLoaded }) {
     let state = false;
 
     return (
-        <nav id="Logo">
+        <nav>
             <NavLink to="/" activeClassName="homeNav">
-                <button >
+                <button id="logo">
                     <i className="fas fa-hamburger">igulp</i>
 
                 </button>

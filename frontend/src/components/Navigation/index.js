@@ -28,7 +28,6 @@ function Navigation({ isLoaded }) {
 
                 <div
                     className="homeImg"
-
                 >
                 </div>
                 <div className="text">
