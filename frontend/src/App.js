@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import GoogleApiWrapper from './components/Browser'
 import Restaurants from './components/Restaurants'
+import Footer from './components/Footer'
 
 function App() {
   const dispatch = useDispatch();
@@ -29,11 +30,13 @@ function App() {
           <Route path="/browser">
             <GoogleApiWrapper />
           </Route>
-          <Route path="/restaurant">
+          <Route path="/restaurants">
             <Restaurants />
           </Route>
         </Switch>
+
       )}
+      {/* <Footer /> */}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './Browser.css';
@@ -37,6 +37,7 @@ export class MapContainer extends Component {
     render() {
         return (
             <CurrentLocation
+                className="mapping"
                 centerAroundCurrentLocation
                 google={this.props.google}
             >
