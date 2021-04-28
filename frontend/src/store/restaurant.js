@@ -13,22 +13,20 @@ export const getRestaurants = () => async (dispatch) => {
         const list = await resta.json();
         dispatch(load(list));
         // console.log(list)
+        return resta;
     }
 }
 
-const initialState = { restaurant:[] };
+const initialState = { restaurant:{} };
 
 const restaurantReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD:
-            const allRes = {};
-            action.list.forEach((restaurant) => {
-                allRes[restaurant.id] = restaurant;
+            let allRes = {...state};
+            action.list.forEach((review) => {
+                allRes[review.id] = review;
             })
-            return {
-                ...allRes,
-                ...state
-            }
+            return allRes
         default:
             return state;
     }

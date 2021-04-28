@@ -44,6 +44,15 @@ function Navigation({ isLoaded }) {
 
                 </ul>
             </nav>
+            <div
+                className="homeImg"
+            >
+                <div className="text">
+                    <h1>iGulp</h1>
+                    <textarea>Find</textarea>
+                    <button>Find</button>
+                </div>
+            </div>
         </ul>
     );
 }
