@@ -26,23 +26,27 @@ function Restaurants() {
 
             {restaurant.map((res) => (
                 <div
-                    className="wha"
+                    className="motherDiv"
                 >
-                    <div
-                        className="nav-entry-image"
-                        style={{ backgroundImage: `url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.today.com%2Ffood%2Fihop-s-family-feast-pancake-party-kit-makes-holidays-instantly-t198114&psig=AOvVaw34zc-eKTuQj6AeE_GaHgSO&ust=1619711137888000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjF-qqkofACFQAAAAAdAAAAABAX')` }}
-                    >
-                    </div>
-                    <div>
-                        <div className="primary-text">{res.name}</div>
-                        <div className="secondary-text">
-                            {res.description} {res.hours}
+                    <div className="firstImage">
+
+                        <div
+                            className="nav-entry-image"
+                            style={{ backgroundImage: `url('${res.logo}')` }}
+                        >
+                        </div>
+                        <div className="allText">
+                            <div className="ptext">{res.name}</div>
+                            <div className="stext">
+                                {res.description}
+                            </div>
+                            <div className="htext">{res.hours}</div>
                         </div>
                     </div>
                 </div>
             ))}
             <div>
-                <Browser/>
+                <Browser />
             </div>
 
         </nav >
