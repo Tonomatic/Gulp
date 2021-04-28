@@ -30,7 +30,7 @@ function Restaurants() {
                 >
                     <div
                         className="nav-entry-image"
-                        style={{ backgroundImage: `url('${res.logo}.jpg')` }}
+                        style={{ backgroundImage: `url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.today.com%2Ffood%2Fihop-s-family-feast-pancake-party-kit-makes-holidays-instantly-t198114&psig=AOvVaw34zc-eKTuQj6AeE_GaHgSO&ust=1619711137888000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjF-qqkofACFQAAAAAdAAAAABAX')` }}
                     >
                     </div>
                     <div>
