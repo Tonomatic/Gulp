@@ -21,6 +21,11 @@
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+
+.map1 {
+    grid-area:map;
+}
+
 .ptext {
     font-weight: bold;
 }
@@ -30,7 +35,8 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-        "picture des des map map"
+        "picture des map map map"
+
 
 }
 

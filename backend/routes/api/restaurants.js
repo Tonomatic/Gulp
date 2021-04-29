@@ -1,6 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check, validationResult } = require('express-validator');
+// const { default: restaurantReducer } = require('../../../frontend/src/store/restaurant');
 const { Restaurant } = require('../../db/models')
 const router = express.Router();
 
@@ -10,4 +11,8 @@ router.get('/', asyncHandler( async function(req, res ) {
 }));
 
 
+router.get('/:id', asyncHandler( async function(req, res) {
+    const restaurant = await Restaurant.findByPk(id);
+    return res.json(restaurant);
+}))
 module.exports = router;

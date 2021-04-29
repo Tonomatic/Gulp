@@ -1,9 +1,7 @@
-import { useEffect, useState, Image, AppRegistry } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import { useImage } from 'react-image'
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
@@ -24,20 +22,7 @@ function Navigation({ isLoaded }) {
 
     return (
         <nav>
-            <div>
-
-                <div
-                    className="homeImg"
-                >
-                </div>
-                <div className="text">
-                    <h1>igulp</h1>
-                    Find
-                <input />
-                    <button>Find</button>
-                </div>
-            </div>
-            <ul className="navigationBar">
+            <div className="navigationBar">
                 <li>
                     <NavLink to="/" activeClassName="homeNav">Home</NavLink>
                     {isLoaded && sessionLinks}
@@ -53,7 +38,21 @@ function Navigation({ isLoaded }) {
                     <NavLink to="restaurants">Restaurants</NavLink>
                 </li>
 
-            </ul>
+            </div>
+            <div>
+
+                <div
+                    className="homeImg"
+                >
+                </div>
+                <div className="text">
+                    <h1>igulp</h1>
+                    Find
+                <input />
+                    <button>Find</button>
+                </div>
+            </div>
+
 
         </nav>
     );

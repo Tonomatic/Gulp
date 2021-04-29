@@ -1,4 +1,4 @@
-import { csrfFetch } from './csrf';
+// import { csrfFetch } from './csrf';
 
 const LOAD = "restaurants/load";
 const load = (list) => ({
@@ -17,6 +17,13 @@ export const getRestaurants = () => async (dispatch) => {
     }
 }
 
+
+export const getOneRestaurant = (id) => async (dispatch) => {
+    const res = await fetch(`/api/restaurants/${id}`);
+    if(!res.ok) throw res;
+    const restaurant = await res.json();
+    dispatch(load)
+}
 const initialState = { restaurant:{} };
 
 const restaurantReducer = (state = initialState, action) => {

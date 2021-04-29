@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import './Browser.css';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './UsersLocation';
 
-const mapStyles = {
-    width: '100%',
-    height: '100%'
-};
 
+let map;
+let service;
+let infowindow;
 
+console.log(CurrentLocation)
 export class MapContainer extends Component {
     state = {
         showingInfoWindow: false,  // Hides or shows the InfoWindow
@@ -55,6 +53,11 @@ export class MapContainer extends Component {
         );
     }
 }
+// export default GoogleApiWrapper(
+//     (props) => ({
+//       apiKey: props.apiKey
+//     }
+//   ))(MapContainer)
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyABdRIkqcDyFxSoksmn6XCkrU6Z5N2iZao'
 })(MapContainer);

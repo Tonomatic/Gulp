@@ -27,17 +27,6 @@
     color: purple;
   }
 
-  .thisboi {
-    color: red;
-    display: inline-block;
-    margin: 0px;
-    padding: 0px 15px;
-    text-decoration: none;
-    transition: color 0.3s ease-in;
-    height: 60px;
-    line-height: 60px;
-  }
-
   .homeImg {
     background-image: url('../../images/ihop-holiday-pancake-family-feast-mc-main-201109_9a782830f68d234dcbf6908978da540a.jpg');
     opacity: 0.5;
@@ -48,10 +37,12 @@
     position: relative;
   }
 
+
+  
   .text {
     text-align: center;
     position: absolute;
-    top: 30%;
+    bottom: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
