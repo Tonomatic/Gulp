@@ -9,6 +9,7 @@ import GoogleApiWrapper from './components/Browser'
 import Restaurants from './components/Restaurants'
 import Footer from './components/Footer'
 import Logo from './components/Logo'
+// import Contact from './components/Contact'
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,12 @@ function App() {
         <Route path="/restaurants">
           <Restaurants />
         </Route>
+        <Route path="/restaurants/:id">
+          <Restaurants />
+        </Route>
+        {/* <Route path="/contact" >
+          <Contact />
+        </Route> */}
       </Switch>
 
       {/* <Footer /> */}

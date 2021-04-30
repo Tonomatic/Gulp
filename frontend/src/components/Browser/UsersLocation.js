@@ -6,8 +6,8 @@ const mapStyles = {
         borderRadius: 5,
         right: 0,
         position: 'absolute',
-        width: '50%',
-        height: '100%'
+        width: '55%',
+        height: '1000px'
     }
 
 };
@@ -136,7 +136,7 @@ CurrentLocation.defaultProps = {
         lat: -1.2884,
         lng: 36.8233
     },
-    query: 'restaurant',
+    // query: 'restaurant',
     centerAroundCurrentLocation: false,
     visible: true
 

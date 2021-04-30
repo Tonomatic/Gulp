@@ -12,6 +12,14 @@ router.get('/', asyncHandler( async function(req, res ) {
     return res.json(reviews)
 }));
 
+router.get('/:id', asyncHandler( async function(req, res ) {
+    const { id } = req.body;
+    const reviews = await Restaurant.findAll({
+        where: { userId }
+    });
+    return res.json(reviews)
+}));
+
 router.post('/userId(\\d+)', asyncHandler(async (req, res) =>{
     const { userId } = req.params;
     const { restaurantId } = req.body;
@@ -22,7 +30,7 @@ router.post('/userId(\\d+)', asyncHandler(async (req, res) =>{
 router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
     const { id } = req.params;
     const review = await Review.findByPk(id);
-    await ticket.destroy();
+    await review.destroy();
     return res.json({succes: "sucess"})
 
 }))

@@ -11,7 +11,6 @@
 .motherDiv {
     margin: 10px;
     padding: 5px;
-
 }
 
 .allText {
@@ -22,15 +21,14 @@
 }
 
 
-.map1 {
-    grid-area:map;
-}
+
 
 .ptext {
     font-weight: bold;
 }
 .firstImage {
     display:grid;
+    margin: 10px;
     height: 200px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;

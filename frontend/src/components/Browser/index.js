@@ -3,12 +3,6 @@ import './Browser.css';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './UsersLocation';
 
-
-let map;
-let service;
-let infowindow;
-
-console.log(CurrentLocation)
 export class MapContainer extends Component {
     state = {
         showingInfoWindow: false,  // Hides or shows the InfoWindow
@@ -34,6 +28,7 @@ export class MapContainer extends Component {
 
     render() {
         return (
+
             <CurrentLocation
                 className="mapping"
                 centerAroundCurrentLocation
@@ -45,6 +40,7 @@ export class MapContainer extends Component {
                     visible={this.state.showingInfoWindow}
                     onClose={this.onClose}
                 >
+                    {InfoWindow}
                     <div>
                         <h4>{this.state.selectedPlace.name}</h4>
                     </div>
