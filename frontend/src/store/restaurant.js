@@ -13,7 +13,7 @@ export const getRestaurants = () => async (dispatch) => {
         const list = await resta.json();
         dispatch(load(list));
         // console.log(list)
-        return resta;
+        // return resta;
     }
 }
 
@@ -22,8 +22,10 @@ export const getOneRestaurant = (id) => async (dispatch) => {
     const res = await fetch(`/api/restaurants/${id}`);
     if(!res.ok) throw res;
     const restaurant = await res.json();
-    dispatch(load)
+    dispatch(load(restaurant))
 }
+
+
 const initialState = { restaurant:{} };
 
 const restaurantReducer = (state = initialState, action) => {

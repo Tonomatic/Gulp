@@ -1,11 +1,17 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getRestaurants, getOneRestaurant } from '../../store/restaurant'
+import {  getOneRestaurant } from '../../store/restaurant'
 import "./Restaurants.css"
 import Browser from '../Browser/index';
 
 function RestaurantsId() {
+    const { restaurantId } = useParams();
+    const dispatch = useDispatch();
+    const restaurant = useSelector((state) => state.restaurant[restaurantId]);
+    
+
+
     // const sessionUser = useSelector(state => state.session.user);
     // // console.log(sessionUser)
     // const dispatch = useDispatch();

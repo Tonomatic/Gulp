@@ -29,9 +29,6 @@ function Navigation({ isLoaded }) {
 
                 </li>
                 <li>
-                    <NavLink to="/browser">Map</NavLink>
-                </li>
-                <li>
                     <a href=" " className="link">About</a>
                 </li>
                 <li>

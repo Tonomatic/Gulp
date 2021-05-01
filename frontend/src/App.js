@@ -11,6 +11,7 @@ import Restaurants from './components/Restaurants/index'
 import Logo from './components/Logo'
 import Creator from './components/Creator'
 import RestaurantsId from './components/Restaurants/RestaurantsId'
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);

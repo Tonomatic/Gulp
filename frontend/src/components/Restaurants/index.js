@@ -11,14 +11,14 @@ function Restaurants() {
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
 
-    const restaurant = useSelector(state => {
+    const restaurant = useSelector((state) => {
         return Object.values(state.restaurant);
     })
     restaurant.pop();
     const individual = (e) => {
         dispatch(getOneRestaurant(restaurantId));
     }
-
+    // console.log(individual())
     useEffect(() => {
         let change = individual();
         // console.log(change);
@@ -30,7 +30,7 @@ function Restaurants() {
     })
     // console.log(res)
     // console.log(restaurant)
-    const [showForm, setShowForm] = useState(false);
+    // const [showForm, setShowForm] = useState(false);
 
     // if (!restaurant) return null;
     return (
@@ -45,12 +45,12 @@ function Restaurants() {
                 {restaurant.map((res) => {
 
                     return (
-                        <NavLink key={res.logo} to={`/restaurant/${res.id}`}>
+                        <NavLink key={res.id} to={`/restaurants/${res.id}`}>
                             <div>
                                 <div className="firstImage">
 
                                     <button
-                                        onClick={() => setShowForm(true)}
+                                        // onClick={() => setShowForm(true)}
                                         className="nav-entry-image"
                                         style={{ backgroundImage: `url('${res.logo}')` }}
                                     >
