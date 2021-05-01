@@ -7,6 +7,7 @@ import Browser from '../Browser/index';
 
 function Restaurants() {
     const sessionUser = useSelector(state => state.session.user);
+    // console.log(sessionUser)
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
 
@@ -20,7 +21,7 @@ function Restaurants() {
 
     useEffect(() => {
         let change = individual();
-        console.log(change);
+        // console.log(change);
         dispatch(getRestaurants());
     }, [restaurantId]);
 

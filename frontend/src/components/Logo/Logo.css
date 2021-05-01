@@ -1,0 +1,17 @@
+#logo {
+    height: 40px;
+    width: 70px;
+    background-color: crimson;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#allthis {
+    display: flex;
+    justify-content: center;
+}
+
+#logo:hover {
+    cursor: pointer;
+    opacity: .8;
+}

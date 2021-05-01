@@ -6,11 +6,11 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import GoogleApiWrapper from './components/Browser'
-import Restaurants from './components/Restaurants'
-import Footer from './components/Footer'
+import Restaurants from './components/Restaurants/index'
+// import Footer from './components/Footer'
 import Logo from './components/Logo'
-// import Contact from './components/Contact'
-
+import Creator from './components/Creator'
+import RestaurantsId from './components/Restaurants/RestaurantsId'
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -36,11 +36,11 @@ function App() {
           <Restaurants />
         </Route>
         <Route path="/restaurants/:id">
-          <Restaurants />
+          <RestaurantsId />
         </Route>
-        {/* <Route path="/contact" >
-          <Contact />
-        </Route> */}
+        <Route path="/about" >
+          <Creator />
+        </Route>
       </Switch>
 
       {/* <Footer /> */}
