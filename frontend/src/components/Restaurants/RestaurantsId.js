@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getOneRestaurant } from '../../store/restaurant'
 import "./Restaurants.css"
 
-function Restaurants1() {
+function RestaurantsId() {
     const { id } = useParams();
     const restaurant = useSelector(state => state.restaurant[id]);
     const dispatch = useDispatch();
@@ -17,29 +17,10 @@ function Restaurants1() {
 
     if(!restaurant) return null;
 
-
-
-    // const sessionUser = useSelector(state => state.session.user);
-    // const dispatch = useDispatch();
-    // const { restaurantId } = useParams();
-
-    // const restaurant = useSelector((state) => {
-    //     return Object.values(state.restaurant);
-    // })
-    // restaurant.pop();
-
-    // useEffect(() => {
-    //     dispatch(getRestaurants());
-    // }, [restaurantId]);
-
-    // const res = useSelector(resta => {
-    //     return resta
-    // })
-
     return (
         <nav>
             Hello
-            <div id="sl1er">
+            <div >
                 <div class="sl1es">
 
                 </div>
@@ -48,4 +29,4 @@ function Restaurants1() {
     );
 }
 
-export default Restaurants1;
+export default RestaurantsId;

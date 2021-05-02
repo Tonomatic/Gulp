@@ -11,6 +11,7 @@ import Restaurants from './components/Restaurants/index'
 import Logo from './components/Logo'
 import Creator from './components/Creator'
 import RestaurantsId from './components/Restaurants/RestaurantsId'
+import Reviews from './components/Reviews'
 
 function App() {
   const dispatch = useDispatch();
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path="/about" >
           <Creator />
+        </Route>
+        <Route path="/reviews" >
+            <Reviews />
         </Route>
       </Switch>
 

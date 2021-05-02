@@ -8,7 +8,7 @@ module.exports = {
     let usedPairs = {}
     let reviews = []
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 20; i++) {
       let randUserId = Math.floor(Math.random() * 20) + 1
       let randRestId = Math.floor(Math.random() * 5) + 1
       if (!usedPairs[randUserId]) {

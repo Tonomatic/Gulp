@@ -19,11 +19,11 @@ const deleteReview = (reviewId) => ({
     reviewId
 })
 
-export const getReviews = (userId) => async (dispatch) => {
+export const getReviews = () => async (dispatch) => {
     const res = await csrfFetch(`/api/reviews`);
     const result = await res.json();
     dispatch(load(result));
-    return result;
+    // return result;
 }
 
 const initialState = { reviews:[] };
@@ -32,8 +32,8 @@ const reviewReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD:
             const allRes = {};
-            action.list.forEach((restaurant) => {
-                allRes[restaurant.id] = restaurant;
+            action.list.forEach((review) => {
+                allRes[review.id] = review;
             })
             return {
                 ...allRes,

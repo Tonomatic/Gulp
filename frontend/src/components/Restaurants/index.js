@@ -15,6 +15,7 @@ function Restaurants() {
         return Object.values(state.restaurant);
     })
     restaurant.pop();
+    restaurant.pop();
 
     useEffect(() => {
         dispatch(getRestaurants());
