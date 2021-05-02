@@ -33,7 +33,7 @@ function App() {
         <Route path="/browser">
           <GoogleApiWrapper />
         </Route>
-        <Route path="/restaurants">
+        <Route path="/restaurants" exact>
           <Restaurants />
         </Route>
         <Route path="/restaurants/:id">

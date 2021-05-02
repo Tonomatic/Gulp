@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getRestaurants, getOneRestaurant } from '../../store/restaurant'
+import { getRestaurants } from '../../store/restaurant'
 import "./Restaurants.css"
 import Browser from '../Browser/index';
+import RestaurantsId from './RestaurantsId'
 
 function Restaurants() {
     const sessionUser = useSelector(state => state.session.user);
-    // console.log(sessionUser)
     const dispatch = useDispatch();
     const { restaurantId } = useParams();
 
@@ -15,24 +15,15 @@ function Restaurants() {
         return Object.values(state.restaurant);
     })
     restaurant.pop();
-    const individual = (e) => {
-        dispatch(getOneRestaurant(restaurantId));
-    }
-    // console.log(individual())
+
     useEffect(() => {
-        let change = individual();
-        // console.log(change);
         dispatch(getRestaurants());
     }, [restaurantId]);
 
     const res = useSelector(resta => {
         return resta
     })
-    // console.log(res)
-    // console.log(restaurant)
-    // const [showForm, setShowForm] = useState(false);
 
-    // if (!restaurant) return null;
     return (
         <nav>
 

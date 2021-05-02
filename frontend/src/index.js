@@ -9,7 +9,6 @@ import App from './App';
 import * as sessionActions from './store/session';
 import configureStore from './store';
 
-
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
