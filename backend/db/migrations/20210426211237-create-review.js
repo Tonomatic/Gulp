@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       reviewPhotos: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.TEXT
       },
       rating: {

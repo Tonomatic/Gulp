@@ -51,7 +51,7 @@ function RestaurantsId({ hideForm }) {
         //     history.push(`/pokemon/${review.id}`);
         //     hideForm();
         // }
-        const res = await fetch(`/api/restaurants/${id}/reviews`, {
+        const res = await csrfFetch(`/api/restaurants/${id}/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -63,6 +63,7 @@ function RestaurantsId({ hideForm }) {
         setPersonalReview(true);
         setReviewText(rev.text);
         setRating(rev.rating)
+        console.log(payload)
     };
 
     console.log(reviews)
@@ -79,7 +80,7 @@ function RestaurantsId({ hideForm }) {
             <div id="Restaurant">
                 <div
                     className="resImg"
-                    style={{ backgroundImage: `url('${restaurant.logo}')` }}
+                // style={{ backgroundImage: `url('${restaurant.photos}')` }}
                 >
                 </div>
 
@@ -89,40 +90,43 @@ function RestaurantsId({ hideForm }) {
                 <h2 id="reviewsHead">
                     Reviews
                 </h2>
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Add Review"
-                        value={reviewTextData}
-                        onchange={updateText} />
-                    <input
-                        type="number"
-                        placeholder="Rate this Restaurant"
-                        min="0"
-                        max="5"
-                        required
-                        value={rating}
-                        onChange={updateRating} />
-                    <button type="submit">Create Review</button>
-                </form>
-                <div class="sl1es">
-                    {reviews.map(review => {
-                        return (
-                            <div id="reviewFirst">
-                                <span id="reviewUser">
-                                    {review.User.username}
-                                </span>
-                                <span id="reviewSecond">
-                                    {review.reviewText}
+                <div id="reviewId">
 
-                                </span>
-                                <span>
-                                    {review.createdAt}
-                                </span>
-                            </div>
-                        )
-                    })}
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="Add Review"
+                            value={reviewTextData}
+                            onchange={updateText} />
+                        <input
+                            type="number"
+                            placeholder="Rate this Restaurant"
+                            min="0"
+                            max="5"
+                            required
+                            value={rating}
+                            onChange={updateRating} />
+                        <button type="submit">Create Review</button>
+                    </form>
+                    <div class="sl1es">
+                        {reviews.map(review => {
+                            return (
+                                <div id="reviewFirst">
+                                    <span id="reviewUser">
+                                        {review.User.username}
+                                    </span>
+                                    <div>
+                                        Rating:{review.rating}
+                                    </div>
+                                    <div id="reviewSecond">
+                                        {review.reviewText}
 
+                                    </div>
+                                </div>
+                            )
+                        })}
+
+                    </div>
                 </div>
             </div >
 

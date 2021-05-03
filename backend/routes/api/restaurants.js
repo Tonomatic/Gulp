@@ -24,11 +24,16 @@ router.get('/:id/reviews', asyncHandler(async(req, res) => {
     return res.json(allReviews);
 }))
 
-router.post('/:id/reviews', asyncHandler(async (req, res) =>{
-    const id = req.params.id;
-    const { restaurantId } = req.body;
-    const review = await Review.create({ userId, restaurantId });
-    return res.json({succes: "sucess"})
+router.post('/:id/reviews', requireAuth, asyncHandler(async (req, res) =>{
+    let newreview = {
+        userId: req.user.id,
+        restaurantId: req.params.restaurantId,
+        reviewText: req.body.reviewText,
+        rating: req.body.rating
+    };
+    newreview = await Review.create(newreview);
+    newreview.dataValues.User = await User.findbyPk(req.user.id);
+    return res.json(newreview)
 }))
 
 

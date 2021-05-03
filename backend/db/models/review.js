@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     reviewPhotos: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      // allowNull: false,
     },
     rating: {
       type: DataTypes.INTEGER,
