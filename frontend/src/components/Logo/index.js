@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Logo.css';
 
-function Logo({ isLoaded }) {
+function Logo() {
     const sessionUser = useSelector(state => state.session.user);
     let link;
     let state = false;

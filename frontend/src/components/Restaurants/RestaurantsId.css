@@ -1,0 +1,47 @@
+#reviewFirst {
+    margin:10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#reviewUser {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* #imggg {
+    height: 200px;
+    background-size: cover;
+} */
+
+.resName {
+    color: red;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px 15px;
+    text-decoration: none;
+    transition: color 0.3s ease-in;
+    height: 60px;
+    line-height: 60px;
+    font-size: 3rem;
+    font-weight: 60px;
+    letter-spacing: 6px;
+}
+
+.resName {
+    display:flex;
+    justify-content: center;
+}
+
+#reviewsHead {
+    color:gray;
+
+}
+
+#Restaurant {
+    margin: 10px;
+}
+.resImg {
+    height: 400px;
+    border-radius: 20px;
+}

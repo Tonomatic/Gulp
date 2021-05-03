@@ -23,10 +23,14 @@ export const getReviews = () => async (dispatch) => {
     const res = await csrfFetch(`/api/reviews`);
     const result = await res.json();
     dispatch(load(result));
-    // return result;
 }
 
-const initialState = { reviews:[] };
+// export const createReview = data = async dispatch => {
+//     const response = await fetch(`/api/reviews/${}`)
+// }
+
+
+const initialState = { reviews: [] };
 
 const reviewReducer = (state = initialState, action) => {
     switch (action.type) {
