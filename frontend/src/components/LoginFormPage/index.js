@@ -35,7 +35,7 @@ function LoginFormPage() {
     }
 
     return (
-        <div>
+        <div id="everything">
             <form onSubmit={handleSumbit}>
                 <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
