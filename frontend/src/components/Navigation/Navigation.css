@@ -12,9 +12,8 @@
   .navigationBar>li {
     display: inline;
   }
-
-
-  li>a {
+  
+  .lii>a {
     color: red;
     font-size: 30px;
     display: inline-block;
@@ -26,7 +25,7 @@
     line-height: 60px;
   }
 
-  li>a:hover {
+  .lii>a:hover {
     color: purple;
   }
 
