@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 
 const mapStyles = {
     map: {
+        borderRadius: 5,
+        right: 0,
         position: 'absolute',
-        width: '100%',
-        height: '100%'
+        width: '55%',
+        height: '1000px'
     }
 
 };
@@ -25,7 +27,7 @@ export class CurrentLocation extends React.Component {
             currentLocation: {
                 lat: lat,
                 lng: lng
-            }
+            },
         };
     }
 
@@ -49,6 +51,25 @@ export class CurrentLocation extends React.Component {
             map.panTo(center);
         }
     }
+
+
+    componentDidMount() {
+        if (this.props.centerAroundCurrentLocation) {
+            if (navigator && navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(pos => {
+                    const coords = pos.coords;
+                    this.setState({
+                        currentLocation: {
+                            lat: coords.latitude,
+                            lng: coords.longitude
+                        }
+                    });
+                });
+            }
+        }
+        this.loadMap();
+    }
+
     loadMap() {
         if (this.props && this.props.google) {
             // checks if google is available
@@ -77,31 +98,16 @@ export class CurrentLocation extends React.Component {
         }
     }
 
-    componentDidMount() {
-        if (this.props.centerAroundCurrentLocation) {
-            if (navigator && navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(pos => {
-                    const coords = pos.coords;
-                    this.setState({
-                        currentLocation: {
-                            lat: coords.latitude,
-                            lng: coords.longitude
-                        }
-                    });
-                });
-            }
-        }
-        this.loadMap();
-    }
+
     renderChildren() {
         const { children } = this.props;
 
         if (!children) return;
 
-        return React.Children.map(children, c => {
-            if (!c) return;
+        return React.Children.map(children, e => {
+            if (!e) return;
 
-            return React.cloneElement(c, {
+            return React.cloneElement(e, {
                 map: this.map,
                 google: this.props.google,
                 mapCenter: this.state.currentLocation
@@ -125,12 +131,15 @@ export class CurrentLocation extends React.Component {
 }
 
 CurrentLocation.defaultProps = {
-    zoom: 14,
+    zoom: 13,
     initialCenter: {
         lat: -1.2884,
         lng: 36.8233
     },
+    // query: 'restaurant',
     centerAroundCurrentLocation: false,
     visible: true
+
+
 };
 export default CurrentLocation;

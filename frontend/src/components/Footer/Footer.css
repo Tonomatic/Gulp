@@ -1,0 +1,27 @@
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.footer {
+	margin-top: 150px;
+	height: 100px;
+	background-color: #0a1128;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    position:absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.footerIcon {
+    font-size: 40px;
+    margin-right: 16px;
+}
+
+.icon {
+    text-align: center;
+}

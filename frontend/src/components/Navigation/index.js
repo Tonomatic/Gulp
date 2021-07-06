@@ -1,9 +1,7 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { NavLink, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
 
@@ -22,26 +20,35 @@ function Navigation({ isLoaded }) {
     }
 
     return (
-        <ul>
+        <nav>
+            <div className="navigationBar">
+                <li>
+                    <NavLink to="/" activeClassName="homeNav">Home</NavLink>
+                    {isLoaded && sessionLinks}
+                    <NavLink to="/about" className="link">About</NavLink>
+                    <NavLink to="restaurants">Restaurants</NavLink>
 
-            <nav id="navigationBar">
-                <ul>
+                </li>
+            </div>
+            <div>
 
-                    <li>
-                        <NavLink exact to="/" activeClassName="thisboi">Home</NavLink>
-                        {isLoaded && sessionLinks}
+                <div
+                    className="homeImg"
+                >
+                </div>
+                <div className="all">
 
-                    </li>
-                    <li>
-                        <NavLink to="/browser">Map</NavLink>
-                    </li>
-                    <li>
-                        <a href=" " className="link">Contact</a>
-                    </li>
+                    <div className="text">
+                        <h1 className="hh1">igulp</h1>
+                        Find
+                        <input />
+                        <button>Find</button>
+                    </div>
+                </div>
+            </div>
 
-                </ul>
-            </nav>
-        </ul>
+
+        </nav>
     );
 }
 

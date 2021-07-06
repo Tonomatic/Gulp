@@ -6,6 +6,13 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import GoogleApiWrapper from './components/Browser'
+import Restaurants from './components/Restaurants/index'
+// import Footer from './components/Footer'
+// import Logo from './components/Logo'
+import Creator from './components/Creator'
+import RestaurantsId from './components/Restaurants/RestaurantsId'
+import Reviews from './components/Reviews'
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -13,22 +20,35 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  return (
+  return isLoaded && (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route path="/browser">
-            <GoogleApiWrapper />
-          </Route>
-        </Switch>
-      )}
+      {/* <Logo /> */}
+      <Switch>
+        <Navigation isLoaded={isLoaded} path="/" exact />
+        <Route path="/login">
+          <LoginFormPage />
+        </Route>
+        <Route path="/signup">
+          <SignupFormPage />
+        </Route>
+        <Route path="/browser">
+          <GoogleApiWrapper />
+        </Route>
+        <Route path="/restaurants" exact>
+          <Restaurants />
+        </Route>
+        <Route path="/restaurants/:id">
+          <RestaurantsId />
+        </Route>
+        <Route path="/about" >
+          <Creator />
+        </Route>
+        <Route path="/reviews" >
+            <Reviews />
+        </Route>
+      </Switch>
+
+      {/* <Footer /> */}
     </>
   );
 }

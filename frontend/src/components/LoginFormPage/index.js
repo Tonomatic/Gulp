@@ -25,32 +25,47 @@ function LoginFormPage() {
             });
     }
 
+    const demoUser = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.login({ credential:"Demo-lition", password:"password" }))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            });
+    }
 
     return (
-        <form onSubmit={handleSumbit}>
-            <ul>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
-            <label>
-                Username or email
+        <div id="everything">
+            <form onSubmit={handleSumbit}>
+                <ul>
+                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+                <label>
+                    Username or email
                 <input
-                    type="text"
-                    value={credential}
-                    onChange={(e) => setCredential(e.target.value)}
-                    required
-                />
-            </label>
-            <label>
-                Password
+                        type="text"
+                        value={credential}
+                        onChange={(e) => setCredential(e.target.value)}
+                        required
+                    />
+                </label>
+                <label>
+                    Password
                 <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </label>
-            <button type="submit">Log In</button>
-        </form>
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </label>
+                <button type="submit">Log In</button>
+            </form>
+            <form onSubmit={demoUser}>
+
+
+                <button type="submit">Demo User</button>
+            </form>
+        </div>
     )
 }
 

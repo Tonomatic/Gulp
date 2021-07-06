@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     hours: {
-      type: DataTypes.DATE,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     rating: {
@@ -18,16 +18,16 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     photos: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
   }, {});
   Restaurant.associate = function (models) {
-    
+    Restaurant.hasMany(models.Review, {foreignKey: 'restaurantId'})
   };
   return Restaurant;
 };

@@ -1,15 +1,7 @@
-import React, { useState, Component } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import React, { Component } from 'react';
 import './Browser.css';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './UsersLocation';
-
-const mapStyles = {
-    width: '100%',
-    height: '100%'
-};
-
 
 export class MapContainer extends Component {
     state = {
@@ -36,24 +28,36 @@ export class MapContainer extends Component {
 
     render() {
         return (
-            <CurrentLocation
-                centerAroundCurrentLocation
-                google={this.props.google}
-            >
-                <Marker onClick={this.onMarkerClick} name={'Current Location'} />
-                <InfoWindow
-                    marker={this.state.activeMarker}
-                    visible={this.state.showingInfoWindow}
-                    onClose={this.onClose}
+            <div>
+                <CurrentLocation
+                    className="mapping"
+                    centerAroundCurrentLocation
+                    google={this.props.google}
                 >
-                    <div>
-                        <h4>{this.state.selectedPlace.name}</h4>
-                    </div>
-                </InfoWindow>
-            </CurrentLocation>
+                    <Marker onClick={this.onMarkerClick} name={'Current Location'} />
+                    <InfoWindow
+                        marker={this.state.activeMarker}
+                        visible={this.state.showingInfoWindow}
+                        onClose={this.onClose}
+                    >
+                        {InfoWindow}
+                        <div>
+                            <h4>{this.state.selectedPlace.name}</h4>
+                        </div>
+                    </InfoWindow>
+                </CurrentLocation>
+
+            </div>
+
+
         );
     }
 }
+// export default GoogleApiWrapper(
+//     (props) => ({
+//       apiKey: props.apiKey
+//     }
+//   ))(MapContainer)
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyABdRIkqcDyFxSoksmn6XCkrU6Z5N2iZao'
 })(MapContainer);

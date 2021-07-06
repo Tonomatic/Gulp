@@ -10,27 +10,25 @@ module.exports = {
       },
       reviewText: {
         allowNull: false,
-        type: Sequelize.STRING(100)
+        type: Sequelize.TEXT
       },
       reviewPhotos: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.TEXT
       },
       rating: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      reviewMark: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
       userId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: 'Users'}
       },
       restaurantId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: 'Restaurants'}
       },
       createdAt: {
         allowNull: false,

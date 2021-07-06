@@ -31,7 +31,6 @@ function ProfileButton({ user }) {
 
     return (
         <div>
-            <NavLink activeClassName="selected" to="/browser">Map</NavLink>
             <button onClick={openMenu}>
                 <i className="fas fa-user-astronaut"></i>
             </button>
