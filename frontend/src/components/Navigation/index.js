@@ -25,15 +25,10 @@ function Navigation({ isLoaded }) {
                 <li>
                     <NavLink to="/" activeClassName="homeNav">Home</NavLink>
                     {isLoaded && sessionLinks}
-
-                </li>
-                <li>
                     <a href=" " className="link">About</a>
-                </li>
-                <li>
                     <NavLink to="restaurants">Restaurants</NavLink>
-                </li>
 
+                </li>
             </div>
             <div>
 
@@ -44,7 +39,7 @@ function Navigation({ isLoaded }) {
                 <div className="all">
 
                     <div className="text">
-                        <h1 className="hh1">igulp</h1>
+                        <h1 className="hh1">gulp</h1>
                     Find
                 <input />
                         <button>Find</button>

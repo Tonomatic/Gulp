@@ -51,7 +51,7 @@
   }
 
 .hh1 {
-    -webkit-text-stroke: 0.15vw white;
+    -webkit-text-stroke: 0.10vw white;
     margin: 0 0 40px 0;
   }
 
@@ -60,8 +60,8 @@
   } */
 
   h1 {
-    font-size: 5rem;
-    font-weight: 600;
+    font-size: 7rem;
+    font-weight: 300;
     letter-spacing: 6px;
   }
 

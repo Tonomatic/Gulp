@@ -22,7 +22,7 @@ function App() {
 
   return isLoaded && (
     <>
-      <Logo />
+      {/* <Logo /> */}
       <Switch>
         <Navigation isLoaded={isLoaded} path="/" exact />
         <Route path="/login">
