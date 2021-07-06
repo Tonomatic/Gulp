@@ -2,9 +2,11 @@
   .navigationBar {
     background: white;
     box-shadow: 0px 1px 5px 5px #ddd;
-    height: auto;
-    text-align: center;
+    height: 100px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .navigationBar>li {
@@ -14,8 +16,7 @@
 
   li>a {
     color: red;
-    font-size: 20px;
-
+    font-size: 30px;
     display: inline-block;
     margin: 0px;
     padding: 0px 15px;

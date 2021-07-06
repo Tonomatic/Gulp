@@ -39,9 +39,9 @@ function Navigation({ isLoaded }) {
                 <div className="all">
 
                     <div className="text">
-                        <h1 className="hh1">gulp</h1>
-                    Find
-                <input />
+                        <h1 className="hh1">igulp</h1>
+                        Find
+                        <input />
                         <button>Find</button>
                     </div>
                 </div>
