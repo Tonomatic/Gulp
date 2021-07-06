@@ -25,7 +25,7 @@ function Navigation({ isLoaded }) {
                 <li>
                     <NavLink to="/" activeClassName="homeNav">Home</NavLink>
                     {isLoaded && sessionLinks}
-                    <a href=" " className="link">About</a>
+                    <NavLink to="/about" className="link">About</NavLink>
                     <NavLink to="restaurants">Restaurants</NavLink>
 
                 </li>

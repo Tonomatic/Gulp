@@ -8,7 +8,7 @@ import Navigation from "./components/Navigation";
 import GoogleApiWrapper from './components/Browser'
 import Restaurants from './components/Restaurants/index'
 // import Footer from './components/Footer'
-import Logo from './components/Logo'
+// import Logo from './components/Logo'
 import Creator from './components/Creator'
 import RestaurantsId from './components/Restaurants/RestaurantsId'
 import Reviews from './components/Reviews'
