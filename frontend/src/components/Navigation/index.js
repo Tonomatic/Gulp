@@ -12,7 +12,7 @@ function Navigation({ isLoaded }) {
                 <NavLink to="/" >Home</NavLink>
                 <NavLink to="/about" className="link">About</NavLink>
                 <NavLink to="restaurants">Restaurants</NavLink>
-                <ProfileButton user={sessionUser}/>
+                <ProfileButton user={sessionUser} />
             </>
         );
     } else {
@@ -20,6 +20,7 @@ function Navigation({ isLoaded }) {
             <>
                 <NavLink to="/login">Log In</NavLink>
                 <NavLink to="/signup">Sign Up</NavLink>
+                <NavLink to="/about" className="link">About</NavLink>
             </>
         );
     }
@@ -39,11 +40,16 @@ function Navigation({ isLoaded }) {
                 <div className="all">
 
                     <div className="text">
-                        <h1 className="hh1">igulp</h1>
-                        Find
-                        <input />
-                        <button>Find</button>
+                        <h1 className="hh1">gulp</h1>
                     </div>
+                    <form className="searchBar">
+                        Find
+                        <input
+                        type="text"
+                        placeholder="Search Restaurant..."
+                        />
+                        <button type="submit" class="fa fa-search"></button>
+                    </form>
                 </div>
             </div>
 

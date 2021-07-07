@@ -1,68 +1,79 @@
+.navigationBar {
+  background: white;
+  box-shadow: 0px 1px 5px 5px #ddd;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .navigationBar {
-    background: white;
-    box-shadow: 0px 1px 5px 5px #ddd;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.navigationBar > li {
+  display: inline;
+}
 
-  .navigationBar>li {
-    display: inline;
-  }
-  
-  .lii>a {
-    color: red;
-    font-size: 30px;
-    display: inline-block;
-    margin: 0px;
-    padding: 0px 15px;
-    text-decoration: none;
-    transition: color 0.3s ease-in;
-    height: 60px;
-    line-height: 60px;
-  }
+.lii > a {
+  color: red;
+  font-size: 30px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 15px;
+  text-decoration: none;
+  transition: color 0.3s ease-in;
+  height: 60px;
+  line-height: 60px;
+}
 
-  .lii>a:hover {
-    color: purple;
-  }
+.lii > a:hover {
+  color: purple;
+}
 
-  .homeImg {
-    background-image: url('../../images/ihop-holiday-pancake-family-feast-mc-main-201109_9a782830f68d234dcbf6908978da540a.jpg');
-    opacity: 0.7;
-    height: 550px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-  }
+.homeImg {
+  background-image: url("../../images/ihop-holiday-pancake-family-feast-mc-main-201109_9a782830f68d234dcbf6908978da540a.jpg");
+  opacity: 0.7;
+  height: 550px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
+.text {
+  text-align: center;
+  position: relative;
+  /* bottom: 5%; */
+  height: 800px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-
-  .text {
-    text-align: center;
-    position: relative;
-    /* bottom: 5%; */
-    height: 800px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.searchBar {
+  position: absolute;
+  left: 42%;
+  top: 75%;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
 
 .hh1 {
-    -webkit-text-stroke: 0.10vw white;
-    margin: 0 0 40px 0;
-  }
+  -webkit-text-stroke: 0.15vw white;
+  margin: 0 0 40px 0;
+  font-size: 80px;
+  font-weight: bolder;
+}
 
-  /* .all {
+/* .all {
     position;
   } */
 
-  h1 {
-    font-size: 7rem;
-    font-weight: 300;
-    letter-spacing: 6px;
-  }
+h1 {
+  font-size: 7rem;
+  font-weight: 300;
+  letter-spacing: 6px;
+}
 
-  /* * {box-sizing: border-box;} */
+/* * {box-sizing: border-box;} */
