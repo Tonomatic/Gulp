@@ -43,12 +43,11 @@ function Navigation({ isLoaded }) {
                         <h1 className="hh1">gulp</h1>
                     </div>
                     <form className="searchBar">
-                        Find
                         <input
                         type="text"
                         placeholder="Search Restaurant..."
                         />
-                        <button type="submit" class="fa fa-search"></button>
+                        <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
             </div>
