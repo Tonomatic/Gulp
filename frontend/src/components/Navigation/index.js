@@ -5,7 +5,7 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
-    const [search, setSearch] = useState([])
+    const [search, setSearch] = useState("")
 
     let sessionLinks;
     if (sessionUser) {
@@ -27,7 +27,14 @@ function Navigation({ isLoaded }) {
         );
     }
 
-    const resta = () => {
+    console.log(search)
+
+    const updateSearch = (e) => {
+        setSearch(e.target.value)
+    }
+
+    const resta = async (e) => {
+        e.preventDefault();
         return (
             <NavLink to="/restaurants"/>
         )
@@ -51,13 +58,14 @@ function Navigation({ isLoaded }) {
                     <div className="text">
                         <h1 className="hh1">gulp</h1>
                     </div>
-                    <form className="searchBar">
+                    <form className="searchBar" onSubmit={resta}>
                         <input
                         type="text"
                         placeholder="Search Restaurant..."
-                        inpu
+                        value={search}
+                        onChange={updateSearch}
                         />
-                        <button onSubmit={resta()}><i class="fa fa-search"></i></button>
+                        <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
             </div>
