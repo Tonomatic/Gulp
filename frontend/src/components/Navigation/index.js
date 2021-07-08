@@ -1,9 +1,11 @@
 import { NavLink, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
+    const [search, setSearch] = useState([])
 
     let sessionLinks;
     if (sessionUser) {
@@ -24,6 +26,13 @@ function Navigation({ isLoaded }) {
             </>
         );
     }
+
+    const resta = () => {
+        return (
+            <NavLink to="/restaurants"/>
+        )
+    }
+
     return (
         <nav>
             <div className="navigationBar">
@@ -46,8 +55,9 @@ function Navigation({ isLoaded }) {
                         <input
                         type="text"
                         placeholder="Search Restaurant..."
+                        inpu
                         />
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <button onSubmit={resta()}><i class="fa fa-search"></i></button>
                     </form>
                 </div>
             </div>
