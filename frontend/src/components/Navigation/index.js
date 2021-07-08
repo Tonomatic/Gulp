@@ -8,27 +8,28 @@ function Navigation({ isLoaded }) {
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
-            <ProfileButton user={sessionUser} />
+            <>
+                <NavLink to="/" >Home</NavLink>
+                <NavLink to="/about" className="link">About</NavLink>
+                <NavLink to="restaurants">Restaurants</NavLink>
+                <ProfileButton user={sessionUser} />
+            </>
         );
     } else {
         sessionLinks = (
             <>
                 <NavLink to="/login">Log In</NavLink>
                 <NavLink to="/signup">Sign Up</NavLink>
+                <NavLink to="/about" className="link">About</NavLink>
             </>
         );
     }
-
     return (
         <nav>
             <div className="navigationBar">
-                <li>
-                    <NavLink to="/" activeClassName="homeNav">Home</NavLink>
+                <div className="lii">
                     {isLoaded && sessionLinks}
-                    <NavLink to="/about" className="link">About</NavLink>
-                    <NavLink to="restaurants">Restaurants</NavLink>
-
-                </li>
+                </div>
             </div>
             <div>
 
@@ -39,11 +40,15 @@ function Navigation({ isLoaded }) {
                 <div className="all">
 
                     <div className="text">
-                        <h1 className="hh1">igulp</h1>
-                        Find
-                        <input />
-                        <button>Find</button>
+                        <h1 className="hh1">gulp</h1>
                     </div>
+                    <form className="searchBar">
+                        <input
+                        type="text"
+                        placeholder="Search Restaurant..."
+                        />
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
                 </div>
             </div>
 
