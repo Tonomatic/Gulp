@@ -28,13 +28,14 @@
   color: purple;
 }
 
+
+
 .homeImg {
   background-image: url("../../images/ihop-holiday-pancake-family-feast-mc-main-201109_9a782830f68d234dcbf6908978da540a.jpg");
   height: 600px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
 }
 
 .text {
@@ -88,6 +89,10 @@ h1 {
   font-size: 7rem;
   font-weight: 300;
   letter-spacing: 6px;
+}
+
+.profile-dropdown {
+  position: absolute;
 }
 
 /* * {box-sizing: border-box;} */
